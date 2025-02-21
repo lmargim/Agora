@@ -18,15 +18,15 @@ const app = express();
 // const port = process.env.PORT || 3000;
 
 // Configurar CORS para admitir solicitudes desde http://localhost:5173
-app.use(
-  cors({
-    origin: [
-      "http://localhost:5173",
-      "https://agora-production-ef4f.up.railway.app"
-    ],
-    credentials: true,
-  })
-);
+// app.use(
+//   cors({
+//     origin: [
+//       "http://localhost:5173",
+//       "https://agora-production-ef4f.up.railway.app"
+//     ],
+//     credentials: true,
+//   })
+// );
 
 // Configurar middleware para analizar JSON en las solicitudes
 app.use(express.json());
