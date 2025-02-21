@@ -18,23 +18,21 @@ const app = express();
 // const port = process.env.PORT || 3000;
 
 // Configurar CORS para admitir solicitudes desde http://localhost:5173
-app.use(
-  cors({
-    origin: [
-      "http://localhost:5173",
-      "https://agora-production-ef4f.up.railway.app"
-    ],
-  })
-);
+if (process.env.NODE_ENV === "development") {
+  app.use(
+    cors({
+      origin: ["http://localhost:5173"],
+    })
+  );
+}
+// Configurar rutas de la API Rest
+app.use("/api/publicacion", publicacionRoutes);
+app.use("/api/comentario", comentarioRoutes);
+
 
 // Configurar middleware para analizar JSON en las solicitudes
 app.use(express.json());
 
-
-
-// Configurar rutas de la API Rest
-app.use("/api/publicacion", publicacionRoutes);
-app.use("/api/comentario", comentarioRoutes);
 
 // Verificar que las rutas se están registrando
 console.log("Rutas activas:");
