@@ -17,9 +17,6 @@ const comentarioRoutes = require("./routes/comentarioRoutes");
 const app = express();
 // const port = process.env.PORT || 3000;
 
-// Configurar middleware para analizar JSON en las solicitudes
-app.use(express.json());
-
 // Configurar CORS para admitir solicitudes desde http://localhost:5173
 app.use(
   cors({
@@ -30,6 +27,11 @@ app.use(
     credentials: true,
   })
 );
+
+// Configurar middleware para analizar JSON en las solicitudes
+app.use(express.json());
+
+
 
 // Configurar rutas de la API Rest
 app.use("/api/publicacion", publicacionRoutes);
