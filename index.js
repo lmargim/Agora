@@ -24,7 +24,6 @@ app.use(
       "http://localhost:5173",
       "https://agora-production-ef4f.up.railway.app"
     ],
-    credentials: true,
   })
 );
 
